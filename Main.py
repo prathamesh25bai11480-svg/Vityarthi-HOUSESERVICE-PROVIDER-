@@ -1,20 +1,13 @@
-#service provider class
-
 class Provider:
 
     def __init__(self, name, rating):
-
         self.name = name
-
         self.rating = rating
-
-    #show provider info
 
     def show(self):
 
         print(f"Provider: {self.name} | Rating: {self.rating}/5")
 
-#Service class
 
 class Service:
 
@@ -26,15 +19,11 @@ class Service:
 
         self.provider = provider
 
-    #SHOW SERVICE WITH PROVIDER
-
     def show(self):
 
         print(f"{self.name} - ${self.price}")
 
         self.provider.show()
-    
-#App class
 
 class HouseServiceApp:
 
@@ -52,15 +41,11 @@ class HouseServiceApp:
 
         self.cart = []
 
-    #Show Service
-
     def show_services(self):
 
         for i, s in enumerate(self.services):
 
             print(f"\n{i+1}. ", end=""); s.show()
-
-    #ADD Service
 
     def add_to_cart(self, idx):
 
@@ -68,7 +53,6 @@ class HouseServiceApp:
 
         print("Added to cart.")
 
-    # show cart
 
     def show_cart(self):
 
@@ -76,15 +60,12 @@ class HouseServiceApp:
 
         for s in self.cart: s.show()
 
-    # Checkout
 
     def checkout(self):
 
         total = sum(s.price for s in self.cart)
 
         print(f"Total = ${total}")
-
-# Main
 
 app = HouseServiceApp()
 
